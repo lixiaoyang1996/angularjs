@@ -1,0 +1,104 @@
+<!--数据对象-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body>
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <p>请选择学习网站：</p>
+        <select ng-model="selectedNet" ng-options="x for (x,y) in nets">
+        </select>
+        <h1>您的选择的值为:</h1>{{selectedNet}}
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.nets = {
+                first: "博思智慧",
+                second: "学学习网",
+                third: "当当网"
+            };
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl" class="row">
+        <div class="col-md-8">
+            <div class="col-md-4">{{engineer.name}}就是:{{engineer.currentActivity}}</div>
+        </div>
+        <div class="col-md-8">
+            <label class="col-md-1">请选择:</label>
+            <select class="col-md-3" ng-model="engineer.currentActivity" ng-options="x for x in activies"></select>
+        </div>
+    </div>
+    <script>
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        $scope.engineer={
+            name:"当前选择",
+            currentActivity:"项目部署"
+        };
+        $scope.activies = [
+            "系统分析",
+            "详细设计",
+            "代码测试",
+            "项目部署"
+        ]
+    });
+    </script> -->
+
+    <div ng-app="myApp" ng-controller="EngineeringController" class="row">
+        <div class="col-md-8">
+
+            <label class="col-md-4">您的选择是: {{ engineer.currentActivityId}}</label>
+
+        </div>
+        <div class="col-md-8">
+            <label class="col-md-1">选择:</label>
+            <select class="col-md-4" ng-model="engineer.currentActivityId" ng-options="a.id as a.name group by a.type for a in activities">
+            </select>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var myAppModule = angular.module("myApp", []);
+        myAppModule.controller("EngineeringController", ["$scope", function ($scope) {
+            $scope.engineer = {
+                currentActivityId: 2
+            };
+
+            $scope.activities = [{
+                    id: 1,
+                    type: "WEB前端开发",
+                    name: "PHP"
+                },
+                {
+                    id: 2,
+                    type: "WEB前端开发",
+                    name: "HTML5"
+                },
+                {
+                    id: 3,
+                    type: "企业软件开发",
+                    name: "JAVA"
+                },
+                {
+                    id: 4,
+                    type: "企业软件开发",
+                    name: ".NET"
+                }
+
+            ];
+        }]);
+    </script>
+</body>
+
+</html>
