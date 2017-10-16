@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body>
+    <!--事件-->
+    <!-- <div ng-app="learnModule" ng-controller="learnCtrl">
+        <div ng-click="click">click me!</div>
+        <button ng-click="click()">click me!</button>
+    </div>
+
+    <script>
+        var app = angular.module('learnModule',[]);
+    app.controller('learnCtrl',function($scope){
+        $scope.click = function(){
+            alert('学习平台');
+        }
+    });
+    </script> -->
+
+ <!--过滤器-->
+    <div ng-app="">
+            <div> {{ 123 | currency: "$￥" }} </div> <!--currency允许我们设置自己的货币符号-->
+            <div>{{3600 | number:2}}</div>
+            <div>{{3600 | number}}</div>
+            <div>{{"hello" | uppercase}}</div>
+            <div>{{"aNGULARJS" | lowercase}}</div>
+            <div>{{ {"name":"dreamapple","language":"AngularJS"} | json}}</div>
+    </div>
+
+
+</body>
+
+</html>

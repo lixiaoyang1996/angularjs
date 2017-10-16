@@ -1,0 +1,28 @@
+<!--scope使用以及根作用域-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h1>姓氏为 {{lastname}} 家族成员:</h1>
+    <ul>
+        <li ng-repeat="x in names">{{lastname}}{{x}}</li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope,$rootScope) {
+        $scope.names=["信","子龙","云"];
+        $rootScope.lastname="赵";
+    });
+</script>
+</body>
+
+</html>

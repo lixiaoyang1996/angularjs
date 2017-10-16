@@ -1,0 +1,52 @@
+<!--ng-options-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+</head>
+
+<body>
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <select ng-model="selectedName" ng-options="x for x in names"></select>
+    </div>
+    <script>
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        $scope.names = ["中国","俄罗斯","美国","法国","英国"];
+    });
+    </script> -->
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <p>选择学习网站:</p>
+        <select ng-model="selectedSite">
+            <option ng-repeat="x in sites" value="{{x.url}}">{{x.site}}</option>
+        </select>
+        <h1>您选择的是: {{selectedSite}}</h1>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.sites = [{
+                    site: "博思智慧",
+                    url: "http://learn.iflysse.com"
+                },
+                {
+                    site: "学学习网",
+                    url: "http://www.xuexuexi.com"
+                },
+                {
+                    site: "Codepad",
+                    url: "http://codepad.org"
+                }
+            ];
+        });
+    </script>
+</body>
+
+</html>
